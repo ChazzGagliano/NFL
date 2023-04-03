@@ -29,7 +29,11 @@ class PlayersController < ApplicationController
     render :show
   end
 
-  def des
+  def destroy
+  @player = Player.find_by(id: params[:id])
+  @player.destroy
+  render json: {message: "player destroyed" }
+  end
    
   
 
